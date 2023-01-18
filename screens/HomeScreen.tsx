@@ -67,10 +67,17 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>)
               <View className="bg-yellow-500 w-2 h-2 rounded-full my-2"/>
               <Text className="text-sm text-gray-400">Buy something first</Text>
             </TouchableOpacity>
-            <TouchableOpacity  activeOpacity={0.7} className="bg-purple-700/50 flex-1 rounded-md">
-              <Text>Spent €0.00</Text>
-              <View className="bg-yellow-500 w-2 h-2 rounded-full"/>
-              <Text>Buy something first</Text>
+            <TouchableOpacity  activeOpacity={0.7} className="bg-purple-700/50 flex-1 rounded-md p-3">
+              <View className="flex-row items-center bg-transparent space-x-1">
+                <MaterialIcons name="account-balance-wallet" size={20} color="#6B41C5" />
+                <Text className="font-[600] mt-[1px] text-[18px] text-white">Total Balance</Text>
+              </View>
+              <View className="flex-row bg-transparent mt-2">
+                <Text className="font-[600] mt-[1px] text-[20px] text-white">
+                  €4292.
+                </Text>
+                <Text className="text-xs mb-3">53</Text>
+              </View>
             </TouchableOpacity>
           </View>
         </View>
