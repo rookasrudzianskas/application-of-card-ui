@@ -5,7 +5,15 @@ import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import React from "react";
 import {StatusBar} from "expo-status-bar";
-import {AntDesign, FontAwesome5, Ionicons, MaterialCommunityIcons, MaterialIcons, Octicons} from "@expo/vector-icons";
+import {
+  AntDesign,
+  FontAwesome5,
+  Fontisto,
+  Ionicons,
+  MaterialCommunityIcons,
+  MaterialIcons,
+  Octicons
+} from "@expo/vector-icons";
 
 export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
@@ -60,7 +68,7 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>)
           <Ionicons name="chevron-down" size={18} color="white" />
         </View>
 
-        <View className="mt-2">
+        <View className="mt-2 space-y-3">
           <View className="flex-row space-x-4">
             <TouchableOpacity activeOpacity={0.7} className="bg-gray-900/80 flex-1 rounded-md p-3">
               <Text className="font-[600] mt-[1px] text-[18px] text-white">Spent €0.00</Text>
@@ -77,6 +85,28 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>)
                   €4292.
                 </Text>
                 <Text className="text-xs mb-3">53</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+
+          <View className="flex-row space-x-4">
+            <TouchableOpacity activeOpacity={0.7} className="bg-gray-900/80 flex-1 rounded-md px-3 py-2">
+              <Text className="font-[600] mt-[1px] mb-1 text-[18px] text-gray-500">Your Cards</Text>
+              <View className="bg-gray-900/80 px-2 py-1 rounded-md w-12 items-center justify-center h-9">
+                <Fontisto name="mastercard" size={20} color="#377EF6" />
+              </View>
+              <Text className="text-sm text-gray-400 mt-1">On the way</Text>
+            </TouchableOpacity>
+            <TouchableOpacity  activeOpacity={0.7} className="bg-orange-700/50 flex-1 rounded-md p-3">
+              <View className="flex-row items-center bg-transparent space-x-1">
+                <MaterialIcons name="account-balance-wallet" size={17} color="#EE7F39" />
+                <Text className="font-[600] mt-[1px] text-[18px] text-white">Main</Text>
+              </View>
+              <View className="flex-row bg-transparent mt-2">
+                <Text className="font-[600] mt-[1px] text-[20px] text-white">
+                  €3433.
+                </Text>
+                <Text className="text-xs mb-3">60</Text>
               </View>
             </TouchableOpacity>
           </View>
