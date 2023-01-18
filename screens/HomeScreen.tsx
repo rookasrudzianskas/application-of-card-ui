@@ -5,7 +5,7 @@ import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import React from "react";
 import {StatusBar} from "expo-status-bar";
-import {AntDesign, Ionicons, MaterialCommunityIcons, MaterialIcons, Octicons} from "@expo/vector-icons";
+import {AntDesign, FontAwesome5, Ionicons, MaterialCommunityIcons, MaterialIcons, Octicons} from "@expo/vector-icons";
 
 export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
@@ -30,26 +30,27 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>)
       </View>
       <View className="mt-5">
         <Text className="text-lg font-semibold text-white">Awaiting Events</Text>
-        <View className="mt-4 bg-warm-gray-700 space-y-4">
-          <View className="flex-row items-center space-x-4">
-            <View className="w-12 h-12 bg-red-500 rounded-full items-center justify-center">
+        <View className="mt-4 bg-gray-900 space-y-4 p-3 rounded-lg">
+          <TouchableOpacity activeOpacity={0.7} className="flex-row items-center space-x-4">
+            <View className="w-12 h-12 bg-red-600 rounded-full items-center justify-center">
               <Ionicons name="ios-airplane-outline" size={30} color="#F87171" className="text-red-500" />
             </View>
-            <View>
+            <View className="bg-gray-900/80">
               <Text className="text-[15px] font-[500]">Open Savings Account!</Text>
               <Text className="text-gray-400 mb-1">Make a Top Up</Text>
             </View>
-          </View>
-
-          <View className="flex-row items-center space-x-4">
-            <View className="w-12 h-12 bg-red-500 rounded-full items-center justify-center">
-              <Ionicons name="ios-airplane-outline" size={30} color="#F87171" className="text-red-500" />
+          </TouchableOpacity>
+          <View className="border border-t border-[1px] mx-4"/>
+          <TouchableOpacity activeOpacity={0.7} className="flex-row items-center space-x-4">
+            <View className="w-12 h-12 bg-yellow-600 rounded-full items-center justify-center">
+              {/*<Ionicons name="ios-airplane-outline" size={30} color="#F87171" className="text-red-500" />*/}
+              <FontAwesome5 name="piggy-bank" size={30} color="#FDE047" />
             </View>
-            <View>
+            <View className="bg-gray-900/80">
               <Text className="text-[15px] font-[500]">Open Savings Account!</Text>
               <Text className="text-gray-400 mb-1">Make a Top Up</Text>
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
       <StatusBar style="auto" />
