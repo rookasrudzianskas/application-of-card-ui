@@ -130,14 +130,14 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>)
           </View>
         </View>
       </View>
-      <View className="absolute -bottom-5 left-[90px] flex-row items-center space-x-10 bg-transparent">
-        <TouchableOpacity activeOpacity={0.7} className="w-12 h-12 bg-orange-600/50 items-center justify-center border border-[#ee7f39] border-[2px] rounded-full">
+      <View className="absolute top-[700px] left-[90px] flex-row items-center space-x-10 bg-transparent">
+        <TouchableOpacity activeOpacity={0.7} className="w-12 h-12 bg-orange-800 items-center justify-center border border-[#ee7f39] border-[2px] rounded-full">
           <AntDesign name="arrowup" size={35} color="#ee7f39" />
         </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.7} className="w-12 h-12 bg-blue-600/50 items-center justify-center border border-[#377EF6] border-[2px] rounded-full">
+        <TouchableOpacity activeOpacity={0.7} className="w-12 h-12 bg-blue-800 items-center justify-center border border-[#377EF6] border-[2px] rounded-full">
           <AntDesign name="arrowdown" size={35} color="#377EF6" />
         </TouchableOpacity>
-        <TouchableOpacity activeOpacity={0.7} className="w-12 h-12 bg-purple-600/50 items-center justify-center border border-[#6B41C5] border-[2px] rounded-full">
+        <TouchableOpacity activeOpacity={0.7} className="w-12 h-12 bg-purple-800 items-center justify-center border border-[#6B41C5] border-[2px] rounded-full">
           <Entypo name="plus" size={35} color="#6B41C5" />
         </TouchableOpacity>
       </View>
