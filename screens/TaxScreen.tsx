@@ -3,18 +3,18 @@ import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, FlatList, Image} from 'react-native';
 import {AntDesign, Entypo, Feather, Ionicons, MaterialIcons} from "@expo/vector-icons";
 import {useNavigation} from "@react-navigation/native";
-import notificationsData from '../assets/data/notifications';
+import notificationsData from '../assets/data/taxdata';
 
-const MainScreen = () => {
+const TaxScreen = () => {
   const navigation = useNavigation();
   return (
-    <View className="pt-16 px-5 relative">
+    <View className="pt-16 px-5">
       <View className="flex-row items-center justify-between">
         <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.7} className="flex-row items-center">
           <Ionicons name="chevron-back-outline" size={24} color="white" />
           <Text className="text-white text-lg font-[500]">Home</Text>
         </TouchableOpacity>
-        <Text className="text-lg font-[500] text-white -ml-12">Main</Text>
+        <Text className="text-lg font-[500] text-white -ml-12">OAW Taxes</Text>
         <Feather name="settings" size={20} color="white" />
       </View>
       <View className="mt-5">
@@ -32,13 +32,13 @@ const MainScreen = () => {
             <Text className="text-gray-600 font-[500] uppercase max-w-[100px] text-center mt-1">Money Requested</Text>
           </View>
           <View className="items-center justify-center">
-            <View className="w-32 h-32 rounded-full bg-orange-500/50 items-center justify-center border border-black border-[2px]">
+            <View className="w-32 h-32 rounded-full bg-yellow-500/50 items-center justify-center border border-black border-[2px]">
               <MaterialIcons name="show-chart" size={28} color="#67C992" />
               <View className="flex-row bg-transparent mt-2">
                 <Text className="font-[500] mt-[1px] text-[24px] text-white">
-                  €3433.
+                  €858.
                 </Text>
-                <Text className="text-xs mb-3 text-white">60</Text>
+                <Text className="text-xs mb-3 text-white">93</Text>
               </View>
             </View>
             <Text className="text-gray-600 font-[500] uppercase max-w-[100px] text-center mt-1">Current Balance</Text>
@@ -59,7 +59,7 @@ const MainScreen = () => {
                    renderItem={({item}) => (
                      <TouchableOpacity activeOpacity={0.7} className="flex-row items-center mb-4 border-y border-gray-600 py-2">
                        <View className="flex-row items-center flex-1">
-                         <Image source={{ uri: 'https://cdn.iconscout.com/icon/free/png-256/stripe-2-498440.png' }} className="w-10 h-10" />
+                         <Image source={{ uri: 'https://cdn-icons-png.flaticon.com/512/149/149071.png' }} className="w-10 h-10" />
                          <View className="ml-5">
                            <Text className="text-white font-[500] text-[17px]">{item.subtitle}</Text>
                            <Text className="text-white text-sm text-gray-400 mt-2">{item.title}</Text>
@@ -69,7 +69,7 @@ const MainScreen = () => {
                          <Text className="font-[500] mt-[1px] text-[22px] text-blue-500">
                            {item.price}.
                          </Text>
-                         <Text className="text-xs mb-3 text-blue-500">00</Text>
+                         <Text className="text-xs mb-3 text-blue-500">{item.priceDecimals}</Text>
                        </View>
                      </TouchableOpacity>
                      )} />
@@ -89,4 +89,4 @@ const MainScreen = () => {
   );
 };
 
-export default MainScreen;
+export default TaxScreen;

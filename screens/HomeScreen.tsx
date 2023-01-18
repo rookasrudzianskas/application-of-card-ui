@@ -114,7 +114,7 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>)
           </View>
 
           <View className="flex-row space-x-4">
-            <TouchableOpacity  activeOpacity={0.7} className="bg-yellow-600/50 flex-1 rounded-md p-3 mr-6">
+            <TouchableOpacity  onPress={() => navigation.navigate('TaxScreen')} activeOpacity={0.7} className="bg-yellow-600/50 flex-1 rounded-md p-3 mr-6">
               <View className="flex-row items-center bg-transparent space-x-1">
                 <MaterialIcons name="account-balance-wallet" size={17} color="#FDE047" />
                 <Text className="font-[600] mt-[1px] text-[18px] text-white">OAW Taxes</Text>
