@@ -59,6 +59,21 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>)
           <Text className="font-[600] mt-[1px] text-[18px] text-white">Rokas</Text>
           <Ionicons name="chevron-down" size={18} color="white" />
         </View>
+
+        <View className="mt-2">
+          <View className="flex-row space-x-4">
+            <TouchableOpacity activeOpacity={0.7} className="bg-gray-900/80 flex-1 rounded-md p-3">
+              <Text className="font-[600] mt-[1px] text-[18px] text-white">Spent €0.00</Text>
+              <View className="bg-yellow-500 w-2 h-2 rounded-full my-2"/>
+              <Text className="text-sm text-gray-400">Buy something first</Text>
+            </TouchableOpacity>
+            <TouchableOpacity  activeOpacity={0.7} className="bg-purple-700/50 flex-1 rounded-md">
+              <Text>Spent €0.00</Text>
+              <View className="bg-yellow-500 w-2 h-2 rounded-full"/>
+              <Text>Buy something first</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
       <StatusBar style="auto" />
     </View>
