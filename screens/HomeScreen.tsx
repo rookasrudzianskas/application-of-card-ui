@@ -1,4 +1,4 @@
-import {StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import {ScrollView, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
@@ -6,7 +6,7 @@ import { RootTabScreenProps } from '../types';
 import React from "react";
 import {StatusBar} from "expo-status-bar";
 import {
-  AntDesign,
+  AntDesign, Entypo,
   FontAwesome5,
   Fontisto,
   Ionicons,
@@ -17,7 +17,7 @@ import {
 
 export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
-    <View className="flex-1 bg-black pt-16 px-5">
+    <ScrollView contentContainerStyle={{paddingBottom: 20}} className="flex-1 bg-black pt-16 px-5 relative">
       <View className="flex-row items-center w-full justify-between">
         <TouchableOpacity activeOpacity={0.7}>
           <MaterialCommunityIcons name="tree" size={24} color={'white'} />
@@ -128,7 +128,18 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>)
           </View>
         </View>
       </View>
+      <View className="absolute -bottom-5 left-[105px] flex-row items-center space-x-10 bg-transparent">
+        <TouchableOpacity activeOpacity={0.7} className="w-12 h-12 bg-orange-600/50 items-center justify-center border border-[#ee7f39] border-[2px] rounded-full">
+          <AntDesign name="arrowup" size={35} color="#ee7f39" />
+        </TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.7} className="w-12 h-12 bg-blue-600/50 items-center justify-center border border-[#377EF6] border-[2px] rounded-full">
+          <AntDesign name="arrowdown" size={35} color="#377EF6" />
+        </TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.7} className="w-12 h-12 bg-purple-600/50 items-center justify-center border border-[#6B41C5] border-[2px] rounded-full">
+          <Entypo name="plus" size={35} color="#6B41C5" />
+        </TouchableOpacity>
+      </View>
       <StatusBar style="auto" />
-    </View>
+    </ScrollView>
   );
 }
