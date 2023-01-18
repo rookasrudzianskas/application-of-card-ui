@@ -1,9 +1,4 @@
-/**
- * If you are not familiar with React Navigation, refer to the "Fundamentals" guide:
- * https://reactnavigation.org/docs/getting-started
- *
- */
-import { FontAwesome } from '@expo/vector-icons';
+import {AntDesign, FontAwesome, MaterialCommunityIcons, MaterialIcons} from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -14,7 +9,7 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
-import TabOneScreen from '../screens/TabOneScreen';
+import HomeScreen from '../screens/HomeScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -64,32 +59,43 @@ function BottomTabNavigator() {
       }}>
       <BottomTab.Screen
         name="TabOne"
-        component={TabOneScreen}
+        component={HomeScreen}
         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate('Modal')}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}>
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
+          title: 'Home',
+          tabBarIcon: ({ color }) => <AntDesign name="home" size={24} color={color} />,
+          headerShown: false,
         })}
       />
       <BottomTab.Screen
         name="TabTwo"
         component={TabTwoScreen}
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Activities',
+          tabBarIcon: ({ color }) => <FontAwesome name="group" size={22} color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Green"
+        component={TabTwoScreen}
+        options={{
+          title: 'Green',
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="tree" size={24} color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Profile"
+        component={TabTwoScreen}
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color }) => <MaterialIcons name="supervised-user-circle" size={24} color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Camera"
+        component={TabTwoScreen}
+        options={{
+          title: 'Camera',
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="google-lens" size={24} color={color} />,
         }}
       />
     </BottomTab.Navigator>
