@@ -14,8 +14,10 @@ import {
   MaterialIcons,
   Octicons
 } from "@expo/vector-icons";
+import {useNavigation} from "@react-navigation/native";
 
 export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+  const router = useNavigation()
   return (
     <ScrollView contentContainerStyle={{paddingBottom: 20}} className="flex-1 bg-black pt-16 px-5 relative">
       <View className="flex-row items-center w-full justify-between">
@@ -97,7 +99,7 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>)
               </View>
               <Text className="text-sm text-gray-400 mt-1">On the way</Text>
             </TouchableOpacity>
-            <TouchableOpacity  activeOpacity={0.7} className="bg-orange-700/50 flex-1 rounded-md p-3">
+            <TouchableOpacity onPress={() => navigation.navigate('MainScreen')} activeOpacity={0.7} className="bg-orange-700/50 flex-1 rounded-md p-3">
               <View className="flex-row items-center bg-transparent space-x-1">
                 <MaterialIcons name="account-balance-wallet" size={17} color="#EE7F39" />
                 <Text className="font-[600] mt-[1px] text-[18px] text-white">Main</Text>
@@ -128,7 +130,7 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>)
           </View>
         </View>
       </View>
-      <View className="absolute -bottom-5 left-[105px] flex-row items-center space-x-10 bg-transparent">
+      <View className="absolute -bottom-5 left-[90px] flex-row items-center space-x-10 bg-transparent">
         <TouchableOpacity activeOpacity={0.7} className="w-12 h-12 bg-orange-600/50 items-center justify-center border border-[#ee7f39] border-[2px] rounded-full">
           <AntDesign name="arrowup" size={35} color="#ee7f39" />
         </TouchableOpacity>
