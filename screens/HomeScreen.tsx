@@ -30,12 +30,12 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>)
       </View>
       <View className="mt-5">
         <Text className="text-lg font-semibold text-white">Awaiting Events</Text>
-        <View className="mt-4 bg-gray-900 space-y-4 p-3 rounded-lg">
+        <View className="mt-4 bg-gray-900/80 space-y-4 p-3 rounded-lg">
           <TouchableOpacity activeOpacity={0.7} className="flex-row items-center space-x-4">
             <View className="w-12 h-12 bg-red-600 rounded-full items-center justify-center">
               <Ionicons name="ios-airplane-outline" size={30} color="#F87171" className="text-red-500" />
             </View>
-            <View className="bg-gray-900/80">
+            <View className="bg-gray-900/10">
               <Text className="text-[15px] font-[500]">Open Savings Account!</Text>
               <Text className="text-gray-400 mb-1">Make a Top Up</Text>
             </View>
@@ -46,11 +46,18 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>)
               {/*<Ionicons name="ios-airplane-outline" size={30} color="#F87171" className="text-red-500" />*/}
               <FontAwesome5 name="piggy-bank" size={30} color="#FDE047" />
             </View>
-            <View className="bg-gray-900/80">
+            <View className="bg-gray-900/10">
               <Text className="text-[15px] font-[500]">Open Savings Account!</Text>
               <Text className="text-gray-400 mb-1">Make a Top Up</Text>
             </View>
           </TouchableOpacity>
+        </View>
+      </View>
+      <View>
+        <Text className="font-[600] mt-3 text-[15px] text-blue-500">See All...</Text>
+        <View className="flex-row items-center justify-between">
+          <Text className="font-[600] mt-[1px] text-[18px] text-white">Rokas</Text>
+          <Ionicons name="chevron-down" size={18} color="white" />
         </View>
       </View>
       <StatusBar style="auto" />
