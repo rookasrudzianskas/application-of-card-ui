@@ -30,14 +30,24 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>)
       </View>
       <View className="mt-5">
         <Text className="text-lg font-semibold text-white">Awaiting Events</Text>
-        <View>
-          <View>
-            <View>
-              <Ionicons name="ios-airplane-outline" size={24} color="white" />
+        <View className="mt-4 bg-warm-gray-700 space-y-4">
+          <View className="flex-row items-center space-x-4">
+            <View className="w-12 h-12 bg-red-500 rounded-full items-center justify-center">
+              <Ionicons name="ios-airplane-outline" size={30} color="#F87171" className="text-red-500" />
             </View>
             <View>
-              <Text>Open Savings Account!</Text>
-              <Text>Make a Top Up</Text>
+              <Text className="text-[15px] font-[500]">Open Savings Account!</Text>
+              <Text className="text-gray-400 mb-1">Make a Top Up</Text>
+            </View>
+          </View>
+
+          <View className="flex-row items-center space-x-4">
+            <View className="w-12 h-12 bg-red-500 rounded-full items-center justify-center">
+              <Ionicons name="ios-airplane-outline" size={30} color="#F87171" className="text-red-500" />
+            </View>
+            <View>
+              <Text className="text-[15px] font-[500]">Open Savings Account!</Text>
+              <Text className="text-gray-400 mb-1">Make a Top Up</Text>
             </View>
           </View>
         </View>
