@@ -110,6 +110,22 @@ export default function HomeScreen({ navigation }: RootTabScreenProps<'TabOne'>)
               </View>
             </TouchableOpacity>
           </View>
+
+          <View className="flex-row space-x-4">
+            <TouchableOpacity  activeOpacity={0.7} className="bg-yellow-600/50 flex-1 rounded-md p-3 mr-6">
+              <View className="flex-row items-center bg-transparent space-x-1">
+                <MaterialIcons name="account-balance-wallet" size={17} color="#FDE047" />
+                <Text className="font-[600] mt-[1px] text-[18px] text-white">OAW Taxes</Text>
+              </View>
+              <View className="flex-row bg-transparent mt-2">
+                <Text className="font-[600] mt-[1px] text-[20px] text-white">
+                  €858.
+                </Text>
+                <Text className="text-xs mb-3">93</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.7} className="flex-1"/>
+          </View>
         </View>
       </View>
       <StatusBar style="auto" />
